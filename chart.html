@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Tengnueng | Chart</title>
+  <link rel="icon" type="image/png" href="images/logo.png" />
+	<link rel="stylesheet" type="text/css" href="css/chart.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/rsu/rsu-font.css">
+  <link rel="stylesheet" type="text/css" href="fonts/icon/icon-font.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+
+
+<body onload="startTime()">
+   <div class="wrapper">
+	   <header>
+      <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #cc3333; color: white; font-family: 'rsuregular'; font-size: 26px;">
+
+        <div class="menu-icon">"</div>        
+
+        <div class="menu">
+          <ul>
+            <li><a href="#">หน้าแรก</a></li>
+            <li><a href="#">Chart</a></li>
+            <li><a class="active" href="#">Stream</a></li>
+            <li><a href="#">Coming</a></li>
+            <li><a href="#">Our Winner</a></li>
+            <li><a href="#">Music channal</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">เข้าสู่ระบบ</a></li>
+          </ul>
+        </div>
+        
+      </nav>
+
+
+      <div class="func_box">
+        <div class="func_item">
+          <ul>
+            <li><a class="funcactive" href="#">O<br>
+              <span>หน้าหลัก</span></a></li>
+            <li><a href="#">_<br><span>Chart</span></a></li>
+            <li><a href="#"><i class="fas fa-headphones-alt"></i><br><span>Stream</span></a></li>
+            <li><a href="#">z<br><span>Coming</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+</header>
+
+
+      <div class="title_text"> 
+        <div class="box_color1"></div>
+        <div class="box_color2"></div>
+        <div class="box_color3"></div>
+        <div class="head_text">Real Time Chart</div>
+    </div>
+
+
+    <div class="time_box"> 
+    <div id="txt"></div>  
+    </div>
+
+
+
+  <div class="chart_bg">
+
+
+    <div class="chart">
+  <div>
+    <canvas id="canvas"></canvas>
+  </div>
+</div>
+
+  </div>
+
+<div class="buttononchart">
+  <a class="btn-chart" data-btn-alt="ทั้งหมด">ทั้งหมด</a>
+  <a class="btn-chart1" data-btn-alt="204,623">อันดับ 1</a>
+  <a class="btn-chart2" data-btn-alt="108,332">อันดับ 2</a>
+  <a class="btn-chart3" data-btn-alt="90,457">อันดับ 3</a>
+</div>
+
+
+
+<div>
+<div id="chart_static">     
+      <div id="next" alt="Next" title="Next">
+        <div class="arrow-right"></div>
+      </div>
+  
+  
+      <div id="prev" alt="Prev" title="Prev">       
+        <div class="arrow-left"></div>
+      </div>
+  
+      <div id="slider-chart">
+        <div class="slide-chart">
+          <div class="img1"><img src="images/static1-1.jpg"></div>
+          <div class="img1-2"><img src="images/static1-2.jpg"></div>
+        </div>
+        
+        <div class="slide-chart">
+          <div class="img2"><img src="images/static1-2.jpg"></div>
+          <div class="img2-2"><img src="images/static1-1.jpg"></div>
+        </div>
+        
+        <div class="slide-chart">
+          <div class="img3"><img src="images/static1-1.jpg"></div>
+          <div class="img3-2"><img src="images/static1-2.jpg"></div>
+        </div>
+
+        
+      </div>
+    </div>
+</div>
+
+
+<div class="chart_show">
+
+  <div id="tab_nav">
+
+      <ul>
+        <li class="selected"><a href="#">Real time</a></li>
+        <li><a href="#">มาใหม่</a></li>
+        <li><a href="#">ประจำวัน</a></li>
+        <li><a href="#">ประจำสัปดาห์</a></li>
+        <li><a href="#">ประจำเดือน</a></li>
+      </ul>
+
+
+      <div class="chart-box">
+        
+        <h2 class="head-chartbox">&nbsp; &nbsp; &nbsp; อันดับ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;เพลง  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;อัลบั้ม  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ยอดสตรีม
+        </h2><br>
+
+              <div id="chart_box">
+                  <div class="chart-range">1</div>
+                  <div class="chart-move"><i class="fas fa-chevron-up"></i><br>4</div>
+                  <div class="chart-pic"><img src="images/cover1.jpg" width="100px" height="100px"></div>
+                  <div class="chart-name">RBB (Really Bad Boy) <br> Red Velvet</div>
+                  <div class="chart-album">RBB</div>
+                  <div class="chart-stream"><i class="fas fa-headphones-alt"></i>  204,623</div>
+                  <div class="chart-icon">
+
+                        <div class="play">
+                          <audio id="yourAudio" preload='none'>
+                              <source src="audio/RBB.mp3" alt="play">
+                          </audio>
+
+                          <a href="#" id="audioControl">
+                            <img src="images/playbutton.png" alt="play">
+                          </a>
+                        </div><!-- play -->
+
+                        <div class="add">=</div>
+
+                        <div class="load">
+                          <a id="mysvg" href="audio/RBB.mp3" download>L</a>
+                        </div>
+
+                        <div class="like"><a href="#"> P </a></div>
+
+                  </div><!-- chart-icon -->
+
+          </div><!-- chart_box-->
+          <br>
+
+<!-- ------------------------------ end chart_box1 -->
+
+
+              <div id="chart_box">
+                  <div class="chart-range">2</div>
+                  <div class="chart-move"><i class="fas fa-chevron-up"></i><br>4</div>
+                  <div class="chart-pic"><img src="images/cover2.jpg" width="100px" height="100px"></div>
+                  <div class="chart-name">Simon Says <br> NCT127</div>
+                  <div class="chart-album">Regulate</div>
+                  <div class="chart-stream"><i class="fas fa-headphones-alt"></i>  108,002</div>
+                  <div class="chart-icon">
+
+                        <div class="play">
+                          <audio id="yourAudio" preload='none'>
+                              <source src="audio/simon.mp3" alt="play">
+                          </audio>
+
+                          <a href="#" id="audioControl">
+                            <img src="images/playbutton.png" alt="play">
+                          </a>
+                        </div><!-- play -->
+
+                        <div class="add">=</div>
+
+                        <div class="load">
+                          <a id="mysvg" href="audio/simon.mp3" download>L</a>
+                        </div>
+
+                        <div class="like"><a href="#"> P </a></div>
+
+                  </div><!-- chart-icon -->
+
+          </div><!-- chart_box-->
+          <br>
+
+<!-- ------------------------------ end chart_box2 -->
+
+ <div id="chart_box">
+                  <div class="chart-range">3</div>
+                  <div class="chart-move"><i class="fas fa-chevron-up"></i><br>4</div>
+                  <div class="chart-pic"><img src="images/cover3.jpg" width="100px" height="100px"></div>
+                  <div class="chart-name">Wind flower <br> MAMAMOO</div>
+                  <div class="chart-album">BLUE;S</div>
+                  <div class="chart-stream"><i class="fas fa-headphones-alt"></i>  90,457</div>
+                  <div class="chart-icon">
+
+                        <div class="play">
+                          <audio id="yourAudio" preload='none'>
+                              <source src="audio/windflow.mp3" alt="play">
+                          </audio>
+
+                          <a href="#" id="audioControl">
+                            <img src="images/playbutton.png" alt="play">
+                          </a>
+                        </div><!-- play -->
+
+                        <div class="add">=</div>
+
+                        <div class="load">
+                          <a id="mysvg" href="audio/windflow.mp3" download>L</a>
+                        </div>
+
+                        <div class="like"><a href="#"> P </a></div>
+
+                  </div><!-- chart-icon -->
+
+          </div><!-- chart_box-->
+          <br>
+
+<!-- ------------------------------ end chart_box3 -->
+
+
+
+ <div id="chart_box">
+                  <div class="chart-range">4</div>
+                  <div class="chart-move"><i class="fas fa-chevron-up"></i><br>4</div>
+                  <div class="chart-pic"><img src="images/cover4.jpg" width="100px" height="100px"></div>
+                  <div class="chart-name">Love Shot <br> EXO</div>
+                  <div class="chart-album">Love Shot</div>
+                  <div class="chart-stream"><i class="fas fa-headphones-alt"></i>  90,457</div>
+                  <div class="chart-icon">
+
+                        <div class="play">
+                          <audio id="yourAudio" preload='none'>
+                              <source src="audio/RBB.mp3" alt="play">
+                          </audio>
+
+                          <a href="#" id="audioControl">
+                            <img src="images/playbutton.png" alt="play">
+                          </a>
+                        </div><!-- play -->
+
+                        <div class="add">=</div>
+
+                        <div class="load">
+                          <a id="mysvg" href="audio/RBB.mp3" download>L</a>
+                        </div>
+
+                        <div class="like"><a href="#"> P </a></div>
+
+                  </div><!-- chart-icon -->
+
+          </div><!-- chart_box-->
+          <br>
+
+<!-- ------------------------------ end chart_box4 -->
+
+
+
+ <div id="chart_box">
+                  <div class="chart-range">5</div>
+                  <div class="chart-move"><i class="fas fa-chevron-up"></i><br>4</div>
+                  <div class="chart-pic"><img src="images/cover5.jpg" width="100px" height="100px"></div>
+                  <div class="chart-name">HANN <br> (G)I-DLE</div>
+                  <div class="chart-album">I AM</div>
+                  <div class="chart-stream"><i class="fas fa-headphones-alt"></i>  90,457</div>
+                  <div class="chart-icon">
+
+                        <div class="play">
+                          <audio id="yourAudio" preload='none'>
+                              <source src="audio/RBB.mp3" alt="play">
+                          </audio>
+
+                          <a href="#" id="audioControl">
+                            <img src="images/playbutton.png" alt="play">
+                          </a>
+                        </div><!-- play -->
+
+                        <div class="add">=</div>
+
+                        <div class="load">
+                          <a id="mysvg" href="audio/RBB.mp3" download>L</a>
+                        </div>
+
+                        <div class="like"><a href="#"> P </a></div>
+
+                  </div><!-- chart-icon -->
+
+          </div><!-- chart_box-->
+          <br>
+
+<!-- ------------------------------ end chart_box5 -->
+
+
+ <div id="chart_box">
+                  <div class="chart-range">6</div>
+                  <div class="chart-move"><i class="fas fa-chevron-up"></i><br>4</div>
+                  <div class="chart-pic"><img src="images/cover6.jpg" width="100px" height="100px"></div>
+                  <div class="chart-name">SAVE ME ,SAVE YOU <br> WJSN</div>
+                  <div class="chart-album">PLEASE</div>
+                  <div class="chart-stream"><i class="fas fa-headphones-alt"></i>  90,457</div>
+                  <div class="chart-icon">
+
+                        <div class="play">
+                          <audio id="yourAudio" preload='none'>
+                              <source src="audio/RBB.mp3" alt="play">
+                          </audio>
+
+                          <a href="#" id="audioControl">
+                            <img src="images/playbutton.png" alt="play">
+                          </a>
+                        </div><!-- play -->
+
+                        <div class="add">=</div>
+
+                        <div class="load">
+                          <a id="mysvg" href="audio/RBB.mp3" download>L</a>
+                        </div>
+
+                        <div class="like"><a href="#"> P </a></div>
+
+                  </div><!-- chart-icon -->
+
+          </div><!-- chart_box-->
+          <br>
+
+<!-- ------------------------------ end chart_box6 -->
+
+
+ <div id="chart_box">
+                  <div class="chart-range">7</div>
+                  <div class="chart-move"><i class="fas fa-chevron-up"></i><br>4</div>
+                  <div class="chart-pic"><img src="images/cover7.jpg" width="100px" height="100px"></div>
+                  <div class="chart-name">La vie en rose <br> IZONE</div>
+                  <div class="chart-album">Color*IZ</div>
+                  <div class="chart-stream"><i class="fas fa-headphones-alt"></i>  90,457</div>
+                  <div class="chart-icon">
+
+                        <div class="play">
+                          <audio id="yourAudio" preload='none'>
+                              <source src="audio/RBB.mp3" alt="play">
+                          </audio>
+
+                          <a href="#" id="audioControl">
+                            <img src="images/playbutton.png" alt="play">
+                          </a>
+                        </div><!-- play -->
+
+                        <div class="add">=</div>
+
+                        <div class="load">
+                          <a id="mysvg" href="audio/RBB.mp3" download>L</a>
+                        </div>
+
+                        <div class="like"><a href="#"> P </a></div>
+
+                  </div><!-- chart-icon -->
+
+          </div><!-- chart_box-->
+          <br>
+
+<!-- ------------------------------ end chart_box7 -->
+
+<div id="chart_box">
+                  <div class="chart-range">8</div>
+                  <div class="chart-move"><i class="fas fa-chevron-up"></i><br>4</div>
+                  <div class="chart-pic"><img src="images/cover8.png" width="100px" height="100px"></div>
+                  <div class="chart-name">Yes or Yes <br> Twice</div>
+                  <div class="chart-album">Yes or Yes</div>
+                  <div class="chart-stream"><i class="fas fa-headphones-alt"></i>  90,457</div>
+                  <div class="chart-icon">
+
+                        <div class="play">
+                          <audio id="yourAudio" preload='none'>
+                              <source src="audio/RBB.mp3" alt="play">
+                          </audio>
+
+                          <a href="#" id="audioControl">
+                            <img src="images/playbutton.png" alt="play">
+                          </a>
+                        </div><!-- play -->
+
+                        <div class="add">=</div>
+
+                        <div class="load">
+                          <a id="mysvg" href="audio/RBB.mp3" download>L</a>
+                        </div>
+
+                        <div class="like"><a href="#"> P </a></div>
+
+                  </div><!-- chart-icon -->
+
+          </div><!-- chart_box-->
+          <br>
+
+<!-- ------------------------------ end chart_box7 -->
+
+
+<div id="chart_box">
+                  <div class="chart-range">9</div>
+                  <div class="chart-move"><i class="fas fa-chevron-up"></i><br>4</div>
+                  <div class="chart-pic"><img src="images/cover9.jpg" width="100px" height="100px"></div>
+                  <div class="chart-name">Fiance <br> Mino</div>
+                  <div class="chart-album">XX</div>
+                  <div class="chart-stream"><i class="fas fa-headphones-alt"></i>  90,457</div>
+                  <div class="chart-icon">
+
+                        <div class="play">
+                          <audio id="yourAudio" preload='none'>
+                              <source src="audio/RBB.mp3" alt="play">
+                          </audio>
+
+                          <a href="#" id="audioControl">
+                            <img src="images/playbutton.png" alt="play">
+                          </a>
+                        </div><!-- play -->
+
+                        <div class="add">=</div>
+
+                        <div class="load">
+                          <a id="mysvg" href="audio/RBB.mp3" download>L</a>
+                        </div>
+
+                        <div class="like"><a href="#"> P </a></div>
+
+                  </div><!-- chart-icon -->
+
+          </div><!-- chart_box-->
+          <br>
+
+<!-- ------------------------------ end chart_box9 -->
+
+
+<div id="chart_box">
+                  <div class="chart-range">10</div>
+                  <div class="chart-move"><i class="fas fa-chevron-up"></i><br>4</div>
+                  <div class="chart-pic"><img src="images/cover10.jpg" width="100px" height="100px"></div>
+                  <div class="chart-name">SOLO <br> Jennie Kim</div>
+                  <div class="chart-album">Single</div>
+                  <div class="chart-stream"><i class="fas fa-headphones-alt"></i>  90,457</div>
+                  <div class="chart-icon">
+
+                        <div class="play">
+                          <audio id="yourAudio" preload='none'>
+                              <source src="audio/RBB.mp3" alt="play">
+                          </audio>
+
+                          <a href="#" id="audioControl">
+                            <img src="images/playbutton.png" alt="play">
+                          </a>
+                        </div><!-- play -->
+
+                        <div class="add">=</div>
+
+                        <div class="load">
+                          <a id="mysvg" href="audio/RBB.mp3" download>L</a>
+                        </div>
+
+                        <div class="like"><a href="#"> P </a></div>
+
+                  </div><!-- chart-icon -->
+
+          </div><!-- chart_box-->
+          <br>
+
+<!-- ------------------------------ end chart_box9 -->
+
+
+      </div><!-- chart-box -->
+
+
+
+
+
+
+
+<!-- -------------------------------------- -->
+
+      <div class="chart-box">
+        <h2>Tab Content Two</h2>
+      
+      </div>
+
+      <div class="chart-box">
+        <h2>Tab Content Three</h2>
+    
+      </div>
+
+      <div class="chart-box">
+        <h2>Tab Content Four</h2>
+        
+      </div>
+
+            <div class="chart-box">
+        <h2>Tab Content Five</h2>
+        
+      </div>
+   
+    </div><!-- tabnav -->
+
+</div><!-- chart_show -->
+
+<footer>
+  
+     <img class="curveft" src="images/curve-footer.png">
+     <img class="logoft" src="images/logo.png">
+   </div>   
+   <div class="dtft">
+     <div class="set-left">
+       <div class="address">
+        <h1>8</h1>
+        <p>ที่อยู่ 275 หมู่ 1 ถ.เพชรเกษม แขวงบางแค <br>เขตภาษีเจริญกรุงเทพฯ 10600</p>
+       </div>
+       <div class="address">
+        <h2>+</h2>
+        <p>02-7654321</p>
+       </div>
+       <div class="address">
+        <h3>4</h3>
+        <p>TENG1@outlook.com</p>
+       </div>
+     </div>
+     <div class="set-right">
+       <h3>ส่งข้อความถึงเรา</h3>
+       <form>
+          <input class="name" type="text" placeholder="ชื่อ-นามสกุล"><br>
+          <input class="email" type="text" placeholder="E-mail"><br>
+          <input class="sendms" type="text" placeholder="ข้อความ"><br>
+          <button class="submitft"> ส่งข้อความ </button>         
+        </form>
+     </div>
+   </div> <!-- detail-footer -->
+
+   <div class="menuft" style="padding: 0">
+     <ul>
+       <a href="#">
+        <li>ติดต่อเรา</li>       </a>
+       <a href="#">
+        <li>สมัครสมาชิก</li>
+       </a>
+       <a href="#">
+        <li>วิธีสตรีม</li>
+       </a>
+       <a href="#">
+        <li>Back to top</li>
+       </a>
+     </ul>
+
+   </div>
+   <div class="copyr">
+     <div class="set-left" style="padding-top: 10px; padding-left: 0;">
+      <p>&copy; Copyright 2018 เต็งหนึ่ง All Right Reserved.</p>
+       
+     </div>
+     <div class="set-right" style="padding-top: 10px; ">
+       <i class="fab fa-instagram"></i>
+       <i class="fab fa-twitter-square"></i>
+       <i class="fab fa-facebook-square"></i>
+     </div>
+   </div>
+ </footer>
+
+
+
+
+
+
+
+
+</div><!-- wrapper -->
+
+
+
+  <script type="text/javascript">
+  
+// Toggle menu button
+$(document).ready(function() {
+   $(".menu-icon").on("click", function(){
+    $("nav ul").toggleClass("showing");
+
+   })
+})
+</script>
+
+<!-- เวลาใต้ real time -->
+
+<script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML = "เหลือเวลาอีก 3 วัน    "   + h + "   :   " + m + "   :   " + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+
+
+<!-- chart -->
+
+<script>
+  var lineChartData = {
+    labels: ["00.00", "01.00", "02.00", "03.00", "04.00", "05.00", "06.00", "07.00", "08.00", "09.00", "10.00", "11.00", "12.00", "13.00", "14.00", "15.00", "16.00", "17.00", "18.00", "19.00", "20.00", "21.00", "22.00", "23.00", "24.00"],
+    datasets: [{
+        fillColor: "rgba(204,0,51,0)",
+        strokeColor: "rgba(204,0,51,1)",
+        pointColor: "rgba(204,0,51,1)",
+        data: [80, 60, 80, 90, 90, 90, 85,70, 75, 85, 90, 90, 91, 90,80, 87, 89, 94, 99, 91, 96,80, 83, 80]
+    }, {
+        fillColor: "rgba(151,187,205,0)",
+        strokeColor: "rgba(151,187,205,0)",
+        pointColor: "rgba(138,139,146,1)",
+        data: [60, 65, 64, 73, 80, 70, 80 , 73, 78, 72, 74, 71, 66, 62, 63, 68, 62, 54, 61, 60, 52, 53, 58]
+    } , {
+        fillColor: "rgba(151,187,205,0)",
+        strokeColor: "rgba(151,187,205,0)",
+        pointColor: "rgba(138,139,146,0.5)",
+        data: [50, 55, 54, 53, 50, 50, 50 ,53, 58, 52, 54, 51, 56, 52, 53, 58, 52, 54, 51, 50, 47, 53, 48]
+    }]
+
+}
+
+Chart.defaults.global.animationSteps = 30;
+Chart.defaults.global.tooltipYPadding = 12;
+Chart.defaults.global.tooltipCornerRadius = 0;
+Chart.defaults.global.tooltipTitleFontStyle = 'rsubold';
+Chart.defaults.global.tooltipFillColor = "rgba(0,160,0,0.0)";
+Chart.defaults.global.animationEasing = "easeOutBounce";
+Chart.defaults.global.responsive = true;
+Chart.defaults.global.scaleLineColor = "gray";
+Chart.defaults.global.scaleFontSize = 14;
+
+var ctx = document.getElementById("canvas").getContext("2d");
+var LineChartDemo = new Chart(ctx).Line(lineChartData, {
+    pointDotRadius: 8,
+    bezierCurve: false,
+    scaleShowHorizontalLines: false,
+    scaleShowVerticalLines: true,
+    scaleGridLineColor: "gray"
+});
+</script>
+
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+  // options
+  var speed = 500; //transition speed - fade
+  var autoswitch = false; //auto slider options
+  var autoswitch_speed = 5000; //auto slider speed
+  
+  // add first initial active class
+  $(".slide-chart").first().addClass("active");
+  
+  // hide all slides
+  $(".slide-chart").hide;
+  
+  // show only active class slide
+  $(".active").show();
+  
+  // Next Event Handler
+  $('#next').on('click', nextSlide);// call function nextSlide
+  
+  // Prev Event Handler
+  $('#prev').on('click', prevSlide);// call function prevSlide
+  
+  // Auto Slider Handler
+  if(autoswitch == true){
+    setInterval(nextSlide,autoswitch_speed);// call function and value 4000
+  }
+  
+  // Switch to next slide
+  function nextSlide(){
+    $('.active').removeClass('active').addClass('oldActive');
+    if($('.oldActive').is(':last-child')){
+      $('.slide-chart').first().addClass('active');
+    } else {
+      $('.oldActive').next().addClass('active');
+    }
+    $('.oldActive').removeClass('oldActive');
+    $('.slide-chart').fadeOut(speed);
+    $('.active').fadeIn(speed);
+  }
+  
+  // Switch to prev slide
+  function prevSlide(){
+    $('.active').removeClass('active').addClass('oldActive');
+    if($('.oldActive').is(':first-child')){
+      $('.slide-chart').last().addClass('active');
+    } else {
+      $('.oldActive').prev().addClass('active');
+    }
+    $('.oldActive').removeClass('oldActive');
+    $('.slide-chart').fadeOut(speed);
+    $('.active').fadeIn(speed);
+  }
+});
+</script>
+
+<!-- tab switch -->
+
+<script type="text/javascript">
+  $(document).ready(function(){
+               
+
+
+  $('#tab_nav > ul > li > a').eq(0).addClass( "selected" );
+  $('#tab_nav > .chart-box').eq(0).addClass( "selected" );
+      
+    $('#tab_nav > ul').on('click','a',function(){
+      
+        var aElement = $('#tab_nav > ul > li > a');
+        var divContent = $('#tab_nav > .chart-box');
+        
+         /*Handle Tab Nav*/
+         aElement.removeClass( "selected");
+         $(this).addClass( "selected");
+        
+        /*Handle Tab Content*/
+         var clicked_index = aElement.index(this);
+         divContent.css('display','none');
+         divContent.eq(clicked_index).css('display','block');
+      
+        $(this).blur();
+        return false;
+      
+    });
+    
+   
+});//end tab
+</script>
+
+
+
+<script type="text/javascript">
+  var yourAudio = document.getElementById('yourAudio'),
+  ctrl = document.getElementById('audioControl');
+
+ctrl.onclick = function() {
+
+  //define images while paused & played
+  play_html = '<img src="images/playbutton.png">';
+
+  pause_html = '<img src="images/pausebutton.png">';
+
+  // Update the Button
+  var pause = ctrl.innerHTML === pause_html;
+  ctrl.innerHTML = pause ? play_html : pause_html;
+
+  // Update the Audio
+  var method = pause ? 'pause' : 'play';
+  yourAudio[method]();
+
+  // Prevent Default Action
+  return false;
+};
+</script>
+
+
+</body>
+</html>
