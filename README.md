@@ -1,2 +1,2 @@
-# Tengneung-chart
-chart page demo
+# Tengneung-chart & Stream
+chart and stream page demo
